@@ -1,6 +1,6 @@
 # Project 2
 
-Hi! Im Leo Zorzoli and this is my web application for the Project 2: Flack of CS50 Web Programming with Python and JavaScript
+Hi! Im Leo Zorzoli and this is my web application for the Project 2: Flack for CS50 Web Programming with Python and JavaScript
 My personal touch is that the user can change their name.
 
 - The application.py file have  the server settings
