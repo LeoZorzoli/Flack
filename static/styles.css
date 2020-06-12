@@ -1,0 +1,75 @@
+@media (max-height: 800px){
+    footer{
+        display:none;
+    }
+}
+
+main
+{
+    overflow-x: auto;
+    text-align: center;
+}
+
+
+main .form-control
+{
+    display: inline-block;
+    width: auto;
+}
+
+
+.custom-window {
+    box-shadow: 0 0 4px;
+    border-radius: 20px;
+    padding: 20px 20px 30px 20px;
+}
+
+.container-channel {
+    
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+
+#message-box, #file-selector {
+    align-self: center;
+}
+
+#message-box {
+    margin: 20px 20px 10px 30px;
+}
+
+#chat {
+    padding: 20px;
+}
+
+#welcome:hover{
+    color: white;
+}
+
+.links{
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.facebook:hover, .linkedin:hover{
+    color: #1c62d4 !important;
+}
+
+.youtube:hover{
+    color: #fc3838 !important;
+}
+
+.github:hover{
+    color:black !important;
+}
+
+.twitter:hover{
+    color:#38cefc !important;
+}
+
+.nav-link{
+    text-align: center;
+    color:#423f3f !important;
+}
+

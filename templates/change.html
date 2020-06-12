@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change
+{% endblock %}
+
+{% block content %}
+
+    <h4 style="margin-bottom: 40px;" class="display-4">New <kbd>Name</kbd>?</h4>
+    <form action="/change" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" id="username" name="username" autofocus  autocomplete="off" aria-describedby="userHelp">
+        </div>
+        <button class="btn btn-outline-dark" type="submit">Change</button>
+    </form>
+
+    <footer>
+        <div class="container fixed-bottom">  
+          <nav  class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-6 bg-white rounded">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown2" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="margin:5px;">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse"  id="navbarNavDropdown2">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="margin-left: auto;">
+                <li class="nav-item">
+                  <a class="nav-link links github" href="https://github.com/LeoZorzoli" target="_blank"><i class="fa fa-github"></i>Github</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link links facebook" href="https://facebook.com/LeoZorzoli" target="_blank"><i class="fa fa-facebook-square"></i>Facebook</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link links twitter" href="https://twitter.com/ZorzoliL" target="_blank"><i class="fa fa-twitter"></i>Twitter</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link links linkedin" href="https://www.linkedin.com/in/leonel-zorzoli-643a50148/" target="_blank"><i class="fa fa-linkedin-square"></i>Linkedin</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link links youtube" href="https://www.youtube.com/channel/UCuMWDyiaOQ70M-aVgQK01wg" target="_blank"><i class="fa fa-youtube-play"></i>Youtube</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>  
+      </footer>
+{% endblock %}
