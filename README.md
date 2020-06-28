@@ -17,4 +17,4 @@ Hi! Im Leo Zorzoli and this is my web application for the Project 2: Flack for C
     - The change.html is for change your username
     - The error.html handle the errors
 
-https://www.youtube.com/watch?v=c-o0Nv7SPBI&t=1s
+https://www.youtube.com/watch?v=6bWu8Z-7au8
