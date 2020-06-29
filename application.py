@@ -16,7 +16,7 @@ usersLogged = []
 channelsMessages = dict()
 
 @app.route("/")
-@login_required
+
 def index():
     return render_template("index.html", channels=channelsCreated)
 
@@ -49,7 +49,7 @@ def signin():
         return render_template("signin.html")
 
 @app.route("/change", methods=['GET', 'POST'])
-@login_required
+
 def change():
 
     username = request.form.get("username")
@@ -77,7 +77,7 @@ def change():
         return render_template("change.html")
 
 @app.route("/create", methods=['GET','POST'])
-@login_required
+
 def create():
     ''' Create channel '''
 
@@ -104,7 +104,7 @@ def create():
         return render_template("create.html", channels = channelsCreated, )
 
 @app.route("/channels/<channel>", methods=['GET','POST'])
-@login_required
+
 def enter_channel(channel):
     ''' Channel page '''
 
