@@ -1,8 +1,7 @@
 # Project 2
 
-Hi! Im Leo Zorzoli and this is my web application for the Project 2: Flack for CS50 Web Programming with Python and JavaScript
-
-- My personal touch is that the user can change their name.
+Hi! Im Leo Zorzoli and this is my web application for the Project 2: Flack of CS50 Web Programming with Python and JavaScript
+My personal touch is that the user can change their name.
 
 - The application.py file have  the server settings
 - The helpers.py file define a function login required and extends to the application.py file
@@ -17,4 +16,3 @@ Hi! Im Leo Zorzoli and this is my web application for the Project 2: Flack for C
     - The change.html is for change your username
     - The error.html handle the errors
 
-https://www.youtube.com/watch?v=6bWu8Z-7au8
