@@ -160,7 +160,7 @@ def send_msg(msg, timestamp):
     # Save the message
     channelsMessages[room].append([timestamp, session.get('username'), msg])
 
-    emit('announce message', {
+    socketio.emit('announce message', {
         'user': session.get('username'),
         'timestamp': timestamp,
         'msg': msg}, 
@@ -175,7 +175,7 @@ def left():
 
     leave_room(room)
 
-    emit('status', {
+    socketio.emit('status', {
         'msg': session.get('username') + ' has left the channel'}, 
         room=room)
 
