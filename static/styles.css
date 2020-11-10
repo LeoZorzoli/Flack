@@ -17,7 +17,6 @@ main .form-control
     width: auto;
 }
 
-
 .custom-window {
     box-shadow: 0 0 4px;
     border-radius: 20px;
@@ -25,7 +24,6 @@ main .form-control
 }
 
 .container-channel {
-    
     grid-template-columns: auto;
     grid-template-rows: auto;
 }
@@ -73,3 +71,10 @@ main .form-control
     color:#423f3f !important;
 }
 
+.name-page{
+    font-family: 'Turret Road';
+}
+
+.nav-item{
+    font-family: 'Turret Road';
+}
