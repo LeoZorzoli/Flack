@@ -1,4 +1,3 @@
-
 import os
 
 from collections import deque
@@ -78,7 +77,7 @@ def change():
 
         return redirect("/")
     else:
-        return render_template("change.html")
+        return render_template("change.html", channels= channelsCreated)
 
 @app.route("/logout", methods=['GET', 'POST'])
 @login_required
