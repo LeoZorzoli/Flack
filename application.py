@@ -144,7 +144,7 @@ def joined():
 
     join_room(room)
     
-    socketio.emit('status', {
+    emit('status', {
         'userJoined': session.get('username'),
         'channel': room,
         'msg': session.get('username') + ' has joined the channel'}, 
@@ -160,7 +160,7 @@ def send_msg(msg, timestamp):
     # Save the message
     channelsMessages[room].append([timestamp, session.get('username'), msg])
 
-    socketio.emit('announce message', {
+    emit('announce message', {
         'user': session.get('username'),
         'timestamp': timestamp,
         'msg': msg}, 
@@ -175,9 +175,10 @@ def left():
 
     leave_room(room)
 
-    socketio.emit('status', {
+    emit('status', {
         'msg': session.get('username') + ' has left the channel'}, 
         room=room)
 
 
-
+if __name__ == "__main__":
+    socketio.run(app)
