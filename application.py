@@ -144,7 +144,7 @@ def joined():
 
     join_room(room)
     
-    emit('status', {
+    socketio.emit('status', {
         'userJoined': session.get('username'),
         'channel': room,
         'msg': session.get('username') + ' has joined the channel'}, 
