@@ -16,6 +16,9 @@ channelsCreated = []
 usersLogged = []
 channelsMessages = dict()
 
+channelsCreated.append('Public')
+channelsMessages['Public'] = deque()
+
 @app.route("/")
 @login_required
 def index():
@@ -45,7 +48,7 @@ def signin():
         # Remember the user session on a cookie if the browser is closed.
         session.permanent = True
 
-        return redirect("/")
+        return redirect("/channels/Public")
     else:
         return render_template("signin.html")
 
@@ -76,6 +79,17 @@ def change():
         return redirect("/")
     else:
         return render_template("change.html")
+
+@app.route("/logout", methods=['GET', 'POST'])
+@login_required
+def logout():
+
+    try:
+        usersLogged.remove(session['username'])
+    except ValueError:
+        pass
+
+    return redirect("signin")
 
 @app.route("/create", methods=['GET','POST'])
 @login_required
@@ -112,6 +126,9 @@ def enter_channel(channel):
     # Updates user current channel
     session['current_channel'] = channel
 
+    if channel not in channelsCreated:
+        return redirect("/channels/Public")
+
     if request.method == "POST":
             
         return redirect("/")
@@ -138,7 +155,7 @@ def joined():
 def send_msg(msg, timestamp):
     ''' Put the message in the channel '''
 
-    # Send only to users on the same channeñ
+    # Send only to users on the same channel
     room = session.get('current_channel')
 
     # Save only 100 messages 
