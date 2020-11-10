@@ -157,12 +157,6 @@ def send_msg(msg, timestamp):
     # Send only to users on the same channel
     room = session.get('current_channel')
 
-    # Save only 100 messages 
-
-    if (len(channelsMessages[room]) > 100):
-        # Pop the oldest
-        channelsMessages[room].pop(0)
-
     # Save the message
     channelsMessages[room].append([timestamp, session.get('username'), msg])
 

@@ -1,9 +1,5 @@
 {% extends "layout.html" %}
 
-{% block head %}
-<script src="../static/index.js"></script>
-{% endblock %}
-
 {% block title %}
     Flack
 {% endblock %}
@@ -39,4 +35,15 @@
 
       <h1 style="display: none;" id="channelsList">{{channels}}</h1>
 
+<script type="text/javascript">
+  var channel = localStorage.getItem('last_channel')
+  var list = document.getElementById('channelsList').innerHTML
+
+  console.log(channel)
+  console.log(list)
+
+  if (list.includes(channel)) {
+      window.location.replace('/channels/' + channel);   
+  }
+</script>
 {% endblock %}
