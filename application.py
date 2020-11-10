@@ -179,3 +179,5 @@ def left():
         'msg': session.get('username') + ' has left the channel'}, 
         room=room)
 
+if __name__ == "__main__":
+    socketio.run(app)
