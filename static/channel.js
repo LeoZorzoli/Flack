@@ -55,15 +55,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save user current channel on localStorage
         localStorage.setItem('last_channel', data.channel)
+
     })
 
     socket.on('announce message', data => {
 
         // Format message
-        let row = `${data.timestamp}` + ' - ' + `${data.user}` + ':  ' + `${data.msg}`
-        document.querySelector('#chat').value += row + '\n'
-
+        let timestamp = data.timestamp
+        let userMessage = data.user
+        let message = data.msg
+        
+        createMessage(timestamp, userMessage, message)
     })
+
+    function createMessage(timestamp, user, msg) {
+        let ul = document.querySelector('#chat')
+        let userConect = ul.getAttribute('data-user')
+        let li = document.createElement('li')
+        let p = document.createElement('p')
+
+        let pUser = createElement('p', 'user', user)
+        let pMsg = createElement('p', 'msg', msg)
+        let pTimestamp = createElement('p', 'timestamp', timestamp)
+
+        li.appendChild(pUser)
+        li.appendChild(pMsg)
+        li.appendChild(pTimestamp)
+
+
+        li.setAttribute("class", "messageBox")
+        
+        ul.append(li)
+    }
+
+    function createElement(element, cls, text){
+        let el = document.createElement(element)
+        el.appendChild(document.createTextNode(text))
+        el.setAttribute("class", cls)
+
+        return el
+    }
 
     
 });

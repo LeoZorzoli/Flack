@@ -78,3 +78,39 @@ main .form-control
 .nav-item{
     font-family: 'Turret Road';
 }
+
+/* MESSAGE BOX */
+
+.messageBox{
+    list-style: none;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 2px;
+    text-align: left;
+}
+
+
+/* MESSAGE PARTS */
+
+.user{
+    font-size: 20px;
+    color: blue;
+}
+
+.msg{
+    font-size: 18px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 30px;
+    background-color: #21a3ff;
+}
+
+.timestamp{
+    font-size: 16px;
+    color: green;
+}

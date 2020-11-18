@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block content %}
+
 <div>
     <h1 style="margin-bottom: 10px;">
         <span class="display-3">
@@ -18,14 +19,14 @@
 </div>
 <div class="container-channel custom-window">
     <div id="chat-box" class="list-group">
-        <textarea id="chat" cols="30" rows="20" disabled readonly>
+        <ul id="chat">
             {%- if messages -%} 
                 {%- for message in messages -%}
-                    {{  message[0] }} - {{ message[1] }}: {{ message [2] }} {{'\n'}}
+                        <li class="messageBox"><p class="user">{{ message[1] }}</p> <p class="msg">{{ message [2] }}</p> <p>{{message[0]}}</p></li>
                 {%- endfor -%}
                 {{ '-- These are old messages -- ' }}{{- '\n' -}}
             {%- endif -%}
-        </textarea>
+        </ul>
     </div>
 
     <div id="message-box">
@@ -43,9 +44,6 @@
     <div class="form-group" style="margin-right:4px">
         <button id="send-button" class="btn btn-outline-dark" type="reset">Send</button>
         <button id="leave" type="button" class="btn btn-outline-dark" >Leave channel</button>
-    </div>
-    <div class="form-group"> 
-
     </div>
 </div>
 

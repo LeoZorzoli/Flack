@@ -122,6 +122,8 @@ def create():
 def enter_channel(channel):
     ''' Channel page '''
 
+    user = session['username']
+
     # Updates user current channel
     session['current_channel'] = channel
 
@@ -132,7 +134,7 @@ def enter_channel(channel):
             
         return redirect("/")
     else:
-        return render_template("channel.html", channels= channelsCreated, messages=channelsMessages[channel])
+        return render_template("channel.html", channels= channelsCreated, messages=channelsMessages[channel], usersLogged = usersLogged, user=user)
 
 
 @socketio.on("joined", namespace='/')
