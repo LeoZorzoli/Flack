@@ -18,9 +18,12 @@ main .form-control
 }
 
 .custom-window {
-    box-shadow: 0 0 4px;
-    border-radius: 20px;
+    border: 1px solid grey;
     padding: 20px 20px 30px 20px;
+}
+
+.container-main{
+    padding: 4%;
 }
 
 .container-channel {
@@ -75,15 +78,21 @@ main .form-control
 /* MESSAGE PARTS */
 
 .user{
-    font-size: 16px;
+    font-family: 'Turret Road';
+    font-size: 18px;
     color: Black;
 }
 
 .msg{
     margin: 0px;
-
+    font-family: 'Turret Road';
 }
 
 .time{
     color: grey;
+}
+
+.message-info{
+    font-family: 'Turret Road';
+    font-size: 18px;
 }

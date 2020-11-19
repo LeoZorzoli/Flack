@@ -50,8 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
     socket.on('status', data => {
 
         // Joined user
-        let row = '> ' + `${data.msg}` + ' <'
-        document.querySelector('#chat').value += row + '\n';
+
+        infoMessage(data.msg)
+
 
         // Save user current channel on localStorage
         localStorage.setItem('last_channel', data.channel)
@@ -98,6 +99,12 @@ document.addEventListener('DOMContentLoaded', () => {
         el.setAttribute("class", cls)
 
         return el
+    }
+
+    function infoMessage(msg){
+        let chat = document.querySelector('#chat')
+        let message = createElement('p', 'message-info', msg)
+        chat.appendChild(message)
     }
 
     
