@@ -70,18 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createMessage(timestamp, user, msg) {
         let ul = document.querySelector('#chat')
-        let userConect = ul.getAttribute('data-user')
         let li = document.createElement('li')
         let p = document.createElement('p')
 
-        let pUser = createElement('p', 'user', user)
-        let pMsg = createElement('p', 'msg', msg)
-        let pTimestamp = createElement('p', 'timestamp', timestamp)
+        user = user.charAt(0).toUpperCase() + user.slice(1)
+
+        let pUser = createElement('strong', 'user', user)
+        let pMsg = createElement('span', 'msg', msg)
+        let pTimestamp = createElement('small', 'time', timestamp)
+
+        let br = document.createElement('br')
 
         li.appendChild(pUser)
-        li.appendChild(pMsg)
+        li.appendChild(document.createTextNode(' '))
         li.appendChild(pTimestamp)
-
+        li.appendChild(br)
+        li.appendChild(pMsg)
 
         li.setAttribute("class", "messageBox")
         
